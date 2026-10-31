@@ -1,0 +1,70 @@
+---
+metadata:
+  layer: root
+  scope: ./
+  version: "1.0"
+  description: cyano-philosophy 根规范——CyanoOrg 哲学宣言仓库总则
+  last_updated: 2026-10-31
+
+scope:
+  covers:
+    - "文档分层与各目录职责边界"
+    - "frontmatter 必填字段与命题编号规则"
+    - "脱敏禁项（公开红线）与写作纪律"
+    - "双语文档同步与 mermaid 图解纪律"
+  NOT:
+    - "各子目录细则（由各目录自身 .norm 承载，随内容成熟落位）"
+    - "修订治理流程（CHARTER.zh-CN.md 承载）"
+
+agent_rules:
+  frontmatter_required: "每文档必带 type/language/status/updated 四字段（evolution 另加 source-date）。type 枚举：readme | charter | value | axiom | criterion | protocol | evolution-doc | wiki-entry。updated 语义 = 内容版本最后变更时间（非文件落盘时间；Locale-Sync 变更时 zh/en 同步刷新）"
+  language_dirs: "混合规范：根级文档用文件级后缀（README.zh-CN.md / CHARTER.zh-CN.md，GitHub 原生识别；en 变体待术语表后）；内容目录（axioms/criteria/protocols/evolution/wiki）内分 zh-CN/（源）与 en/（镜像）子目录，同一文档两语言同文件名（同 slug 镜像）；en 已于术语表 v0.2 后启动并于 2026-10-30 全量落地（zh/en 同为 draft，Locale-Sync 同步演进；en 目录 README 为镜像导航索引，zh 侧无目录 README——源语言目录即入口）"
+  naming_convention: "criteria: c<N>-<slug>.md（编号即 C-N 锚，如 c2-dual-threshold.md）；protocols: p<N>-<slug>.md；evolution: <YYYY-MM-DD>-<slug>.md（编年）；wiki: <slug>.md（术语词条）；axioms: 固定入口名（values.md / worldview.md），A-x 为文内节编号非文件级"
+  numbering: "公理 A-x / 判据 C-x / 协议 P-x；编号即锚，修订不重编号，superseded 保留号"
+  desensitization_redline: "禁入公开仓：私人人名与个人语境、内部工具链与部署细节、未公开产品名、agent 内部协作细节"
+  language_source: "zh-CN 为源语言；en 镜像同 commit 同步（en 于 glossary v0.2 定稿后启动，2026-10-30 全量落地）"
+  writing_style: "values 宣言体优先；axioms/criteria 结构化表述优先；散论不入正典"
+  diagrams_are_projections: "涉及 A/C/P 命题的 mermaid 节点须带编号（概念节点可不带）；图是正典投影不构成第二事实源"
+
+  # ── 仓库管理规范（repo management；2026-10-31 立，参照 CyanoOrg/norm-spec 实践）──
+  repo_management:
+    branch_model: "单 main 长分支（与 CyanoOrg 组织实践一致）：owner 小改直推；正典级修订（axioms/criteria/protocols 层）走 PR 留档（自我审查+反驳期记录）。不设 develop"
+    branch_protection: "main 禁 force-push（演化档案 append-only 的 git 层硬保障；平台侧设置由 owner 开启）"
+    commit_convention: "主题行英文 conventional + 本仓语义 type/scope：type = canon | archive | mirror | feat | chore | docs，scope = zh | en（如 canon(zh) / mirror(en)）；正文语言自由。Locale-Sync 硬纪律：zh 变更与对应 en 镜像同一 commit；init 批次例外（诞生期分层叙事），此后严格执行"
+    versioning: "仓库级 semver tag：draft 期 0.x 系列（init 后打 v0.1.0，内容批修订 bump minor）；owner 终审 ratified 后打 v1.0.0（工作假设 → 批准正典）。CHARTER 引用锚 A1@v1.0 解析为仓库 tag v1.0.0 时的 A1 表述；命题版本（worldview 修订记录）与仓库 tag 分层：前者是命题修订史，后者是全仓快照锚"
+    evolution_append_only: "evolution/ 原文与编者按事实性内容 append-only（git 层由禁 force-push 保障）；机械修复例外：frontmatter/链接/概念名 sync 类跟进。远期可加 pre-commit 检查（diff 中 evolution 既有文件的实质修改拒绝）"
+    generated_artifacts: "manifest.json / manifest.en.json 仅经 tools/gen_manifest.py 写入；tools/lint.py 幂等检查守门（--check 逐字节比对）"
+    pr_process: "axioms 层 PR 必须带提案+反驳期说明（CHARTER §1 门槛的 PR 形态）；外部翻译 PR 先动 wiki/glossary（CHARTER §3）。哲学讨论与修订提案走 issue"
+    mirroring: "Gitea 主仓 → GitHub CyanoOrg/cyano-philosophy 单向镜像；公开讨论面定在 GitHub issue（Gitea 内网），镜像仓 PR 收敛到主仓工作流"
+    ci_suggestion: "建议（不阻塞 init）：GitHub Actions 跑 python3 tools/lint.py（含幂等检查），对齐 norm-spec 的 ci.yml 实践"
+    contributing: "CONTRIBUTING.md 挂起：首个外部 PR 出现时立（本节的人读投影）"
+  anchor_format: "词条/正典锚格式：〔<文件代号>·<节标识>〕，多锚分隔符为裸全角分号「；」（U+FF1B，无引号包裹）；en 镜像行允许半角 '; ' 变体。文件代号：values / worldview / c1-c6 / p1 / p2 / glossary / CHARTER。节标识：A<n>（公理）｜§<n>（节号数字）｜T<n>（协议特点）｜N<n>（必要性质）｜J（判定节）｜命名节（CHARTER 红线、values 种子/枝）。zh 锚用紧凑「·」；en 锚允许「 · 」空格变体（lint 两种皆容）；命名节可用本地化节名"
+  work_hypothesis_posture: "任何『不可讨论』化都是违例——工作假设姿态是仓库级纪律"
+
+cross_references:
+  - target: CHARTER.zh-CN.md
+    boundary: "修订治理与分层门槛"
+    sync: auto_pull
+    validation: strict
+    description: "CHARTER 治理修订流程，本 norm 治文档形态，两者互不越界"
+  - target: axioms/zh-CN/values.md
+    boundary: "价值观入口文档"
+    sync: auto_pull
+    validation: strict
+    description: "种子与枝的红线关系由 CHARTER 承载，文档形态由本 norm 约束"
+---
+
+# cyano-philosophy 根规范
+
+哲学宣言仓库的总则层。目录职责：
+
+- `axioms/zh-CN/` 正典源（values 种子论述 + worldview 四公理；en/ 镜像待术语表）
+- `criteria/zh-CN/` 判据库源（c1~cN，从实践讨论蒸馏）
+- `protocols/zh-CN/` 协议哲学源（p1~pN，广场协议等）
+- `evolution/zh-CN/` 演化档案源（append-only，脱敏等级最高）
+- `wiki/zh-CN/` 术语导航源（一词一词条，只导航不复述）
+- 各目录 en/ 为镜像位（启动条件见 language_dirs）
+- `tools/` lint 脚本（MIT）
+- `index.html` 零构建阅读器（仓库根；GitHub Pages 入口；manifest.json 驱动导航，tools/gen_manifest.py 生成）
+
+各目录细则 .norm 随内容成熟落位（norm-spec 体系，参照 https://github.com/CyanoOrg/norm-spec）。
