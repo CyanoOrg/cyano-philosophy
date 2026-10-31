@@ -2,7 +2,7 @@
 type: readme
 language: en
 status: draft
-updated: 2026-10-31
+updated: 2026-11-01
 ---
 
 # cyano-philosophy
@@ -12,6 +12,30 @@ updated: 2026-10-31
 The core philosophy, worldview, and values of CyanoOrg — an open-source manifesto (under construction).
 
 > **The sense of the real is the seed of value.** In an era of generative surplus, the one thing that cannot be cheaply generated is the real itself.
+
+## Read Online
+
+**[→ Bilingual reader](https://cyanoorg.github.io/cyano-philosophy/)** — inline diagram rendering, 中文 / English toggle. The recommended entry.
+
+## What This Is
+
+A set of axioms about **the real, value, and sovereignty**, and the criteria and protocol designs derived from them. Three layers:
+
+- **Axioms** — what we believe and why: the [values](axioms/en/values.md) manifesto and the [worldview](axioms/en/worldview.md)'s four axioms
+- **Criteria** — operational adjudication tools: six entries, from verification interrogation to the distribution unit
+- **Protocols** — how these principles become collaboration structure: the agora protocol and the protocol stack
+
+How it is used: **to guide product and strategy decisions** — every proposition must be used and tested in real products; a worldview that never intercepts a decision is a poster ([CHARTER](CHARTER.en.md)).
+
+## Where to Start
+
+| You want to | Read |
+|---|---|
+| The core in 10 minutes | [values](axioms/en/values.md) — the manifesto |
+| The full system | [worldview](axioms/en/worldview.md) |
+| Criteria for decisions | [Criteria library + decision flow](criteria/en/README.md) |
+| How this body of thought grew | [Evolution archive](evolution/en/README.md) (trilogy + appendix) |
+| Look up a term | [Glossary](wiki/en/glossary.md) (anchors to canon only) |
 
 ## System Overview
 
@@ -43,16 +67,16 @@ graph BT
 
 ## Entries
 
-- [axioms/en/values.md](axioms/en/values.md) — the values statement (seed and branches)
-- [axioms/en/worldview.md](axioms/en/worldview.md) — the Layer-Zero canon: axioms (A1–A4) and the unified criterion, dynamics (incl. entropy-reduction economics), trend judgments
-- [criteria/en/](criteria/en/) — the criteria library (c1 unified criterion ~ c6 distribution unit, six entries)
-- [protocols/en/](protocols/en/) — protocol philosophy (p1 the agora protocol / p2 the protocol stack: layered iteration and adjudication)
-- [evolution/en/](evolution/en/) — the philosophy evolution archive (trilogy, nine entries + appendix; sanitized originals + editor's notes)
-- [wiki/en/glossary.md](wiki/en/glossary.md) — the glossary (entries anchor to canon only)
+- [axioms/en/](axioms/en/) — canon: values and worldview
+- [criteria/en/](criteria/en/) — criteria library (c1-c6)
+- [protocols/en/](protocols/en/) — protocol philosophy (p1-p2)
+- [evolution/en/](evolution/en/) — evolution archive (append-only)
+- [wiki/en/glossary.md](wiki/en/glossary.md) — glossary
 - [CHARTER.en.md](CHARTER.en.md) — revision governance charter
+- Governance & revision records live on GitHub (issues / PRs)
 
 ## Status
 
-v0 full first draft (initiated 2026-10-23, content complete 10-27): zh-CN 23 content files all draft, awaiting owner review; **en mirror complete** (2026-10-30: 21 content entries + README/CHARTER, Locale-Sync with zh). This repository exists in the posture of a working hypothesis: every proposition must be used and tested in real products — a worldview that never intercepts a decision is a poster.
+v0 full first draft (initiated 2026-10-23, content complete 10-27): zh-CN 23 content files all draft, awaiting owner review; **en mirror complete** (2026-10-30: 21 entries + README/CHARTER, evolving in sync with zh). This repository exists in the posture of a working hypothesis: every proposition must be used and tested in real products — a worldview that never intercepts a decision is a poster.
 
 License: text CC BY-SA 4.0 + code MIT (layered; see LICENSE and tools/LICENSE)

@@ -70,12 +70,20 @@ function renderLangUI(){
   document.getElementById('lang-zh').classList.toggle('active', LANG==='zh');
   document.getElementById('lang-en').classList.toggle('active', LANG==='en');
 }
+function mapPath(p, target){
+  if(!p) return null;
+  let q = p;
+  if(target==='en'){ q = p.replace('/zh-CN/','/en/').replace('README.zh-CN.md','README.md').replace('CHARTER.zh-CN.md','CHARTER.en.md'); }
+  else { q = p.replace('/en/','/zh-CN/').replace('README.md','README.zh-CN.md').replace('CHARTER.en.md','CHARTER.zh-CN.md'); }
+  return TREE.some(it=>it.path===q) ? q : null;
+}
 function setLang(l){
   if(l===LANG) return;
+  const prev = window.currentPath;
   LANG = l; localStorage.setItem('reader-lang', l);
   document.getElementById('content').style.display='none';
   document.getElementById('placeholder').style.display='block';
-  boot();
+  boot(prev);
 }
 /* ── manifest 驱动导航 ── */
 const PRE = '';
@@ -169,15 +177,23 @@ async function load(path){
       a.onclick = e => { e.preventDefault(); if(href.endsWith('/')) { window.open(PRE + norm.replace(/\/$/, ''), '_blank'); return; } if(TREE.some(it => it.path === norm)) load(norm); else window.open(norm, '_blank'); };
     });
     document.getElementById('main').scrollTop = 0;
+    window.currentPath = path;
   }catch(e){
     err.style.display = 'block';
     err.textContent = `加载失败：${path} — ${e.message}。若以 file:// 打开，请改用 http 服务。`;
   }
 }
 /* ── 启动 ── */
-function boot(){ renderLangUI(); loadManifest().catch(e => {
-  document.getElementById('navtree').innerHTML = `<span style="color:var(--warn);font-size:12px;padding:8px 16px">${I18N[LANG].tagline ? '清单加载失败' : 'Manifest load failed'}：${e.message}</span>`;
-}); }
+function boot(restore){
+  renderLangUI();
+  loadManifest().then(() => {
+    let target = restore ? mapPath(restore, LANG) : null;
+    if(!target && TREE.length) target = TREE[0].path;  // 初始即加载 System overview
+    if(target) load(target);
+  }).catch(e => {
+    document.getElementById('navtree').innerHTML = `<span style="color:var(--warn);font-size:12px;padding:8px 16px">${I18N[LANG].tagline ? '清单加载失败' : 'Manifest load failed'}：${e.message}</span>`;
+  });
+}
 boot();
 </script>
 </body>
