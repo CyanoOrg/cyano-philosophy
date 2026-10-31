@@ -35,7 +35,7 @@ ANCHOR_RE = re.compile(r"〔[a-z0-9]+·[^\〕]+〕")
 def md_files():
     """收集全部受检 md：根级 2 件 + zh-CN/en 内容目录。"""
     out = []
-    for f in ["README.zh-CN.md","CHARTER.zh-CN.md","README.en.md","CHARTER.en.md"]:
+    for f in ["README.zh-CN.md","CHARTER.zh-CN.md","README.md","CHARTER.en.md"]:
         if os.path.exists(f): out.append(f)
     for d in ["axioms","criteria","protocols","wiki","evolution"]:
         for sub in ["zh-CN","en"]:

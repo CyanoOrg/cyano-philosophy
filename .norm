@@ -35,7 +35,7 @@ agent_rules:
     evolution_append_only: "evolution/ 原文与编者按事实性内容 append-only（git 层由禁 force-push 保障）；机械修复例外：frontmatter/链接/概念名 sync 类跟进。远期可加 pre-commit 检查（diff 中 evolution 既有文件的实质修改拒绝）"
     generated_artifacts: "manifest.json / manifest.en.json 仅经 tools/gen_manifest.py 写入；tools/lint.py 幂等检查守门（--check 逐字节比对）"
     pr_process: "axioms 层 PR 必须带提案+反驳期说明（CHARTER §1 门槛的 PR 形态）；外部翻译 PR 先动 wiki/glossary（CHARTER §3）。哲学讨论与修订提案走 issue"
-    mirroring: "Gitea 主仓 → GitHub CyanoOrg/cyano-philosophy 单向镜像；公开讨论面定在 GitHub issue（Gitea 内网），镜像仓 PR 收敛到主仓工作流"
+    mirroring: "GitHub CyanoOrg/cyano-philosophy 为唯一主仓与公开工作面（code / issue / PR / Pages）；不设第二权威拷贝"
     ci_suggestion: "建议（不阻塞 init）：GitHub Actions 跑 python3 tools/lint.py（含幂等检查），对齐 norm-spec 的 ci.yml 实践"
     contributing: "CONTRIBUTING.md 挂起：首个外部 PR 出现时立（本节的人读投影）"
   anchor_format: "词条/正典锚格式：〔<文件代号>·<节标识>〕，多锚分隔符为裸全角分号「；」（U+FF1B，无引号包裹）；en 镜像行允许半角 '; ' 变体。文件代号：values / worldview / c1-c6 / p1 / p2 / glossary / CHARTER。节标识：A<n>（公理）｜§<n>（节号数字）｜T<n>（协议特点）｜N<n>（必要性质）｜J（判定节）｜命名节（CHARTER 红线、values 种子/枝）。zh 锚用紧凑「·」；en 锚允许「 · 」空格变体（lint 两种皆容）；命名节可用本地化节名"

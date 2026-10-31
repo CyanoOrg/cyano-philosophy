@@ -7,6 +7,8 @@ updated: 2026-10-31
 
 # cyano-philosophy
 
+**English (default)** | [中文（source language）](README.zh-CN.md)
+
 The core philosophy, worldview, and values of CyanoOrg — an open-source manifesto (under construction).
 
 > **The sense of the real is the seed of value.** In an era of generative surplus, the one thing that cannot be cheaply generated is the real itself.
