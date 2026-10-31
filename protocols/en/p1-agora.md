@@ -2,7 +2,7 @@
 type: protocol
 language: en
 status: draft
-updated: 2026-10-31
+updated: 2026-11-01
 ---
 
 # P-1 The Agora Protocol
@@ -39,7 +39,7 @@ flowchart LR
 1. **Layered visibility (the gevulot principle, T1)**: the visibility of every cognitive asset is programmable and negotiated per context — private (memory, experience, unexternalized judgment) and public (process evidence, published judgments) are physically separated; **the boundary is enforced by protocol, not by platform policy**.
 2. **Immutable trajectories + revisable pointers (T2)**: the unit of circulation is the verifiable trajectory (append-only; rewriting history = forging process = forfeiting trust); the consensus pointer is an independent, movable layer — conclusions may be overturned by new evidence, the path of approach may not be tampered with. Isomorphic to git: commits are immutable, HEAD moves.
 3. **Consensus weight = process reputation (T3)**: the weight of a judgment is set by its verifiable process record — not by identity, popularity, or compute.
-4. **Reflow contract (T4)**: the attribution of co-created negentropy is built into the protocol — revenue share is a protocol property, not a platform favor. Working rule: **visibility = the pricing function** — how much process you open determines how much distribution you join; opening is neither moral duty nor platform coercion, it is the bid for entering the reflow (sovereignty and distribution are two faces of one mechanism).
+4. **Reflow contract (T4)**: the attribution of co-created negentropy is built into the protocol — revenue share is a protocol property, not a platform favor. Working rule: **visibility = the pricing function** — how much process you open determines how much distribution you join; opening is neither moral duty nor platform coercion, it is the bid for entering the reflow (sovereignty and distribution are two faces of one mechanism). **Metering constraint (the anti-performance principle)**: distribution metering must not weight on visibility as such — trajectory length or volume opened (volume can be watered at near-zero cost); the metering mechanism itself is subject to minimality (any metric becomes a new performance surface); concrete metering is left to each domain's practice.
 5. **Mutual verifiability (T5)**: any node can verify the process evidence behind any "consensus" — unverifiable claims carry no consensus weight (verification interrogation, protocolized).
 6. **Right of exit (the anti-Sobornost insurance, T6)**: a node may leave carrying all its assets (memory, trajectory replicas, reputation records) — **the agora must be abandonable, or it becomes a prison.** Mandatory data portability is a hard clause of the protocol.
 
