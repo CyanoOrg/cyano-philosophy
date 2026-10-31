@@ -14,7 +14,7 @@ def fail(msg): FAILS.append(msg); print(f"  ✗ {msg}")
 def warn(msg): WARNS.append(msg); print(f"  ⚠ {msg}")
 def ok(msg): print(f"  ✓ {msg}")
 
-TYPE_ENUM = {"readme","charter","value","axiom","criterion","protocol","evolution-doc","wiki-entry"}
+TYPE_ENUM = {"readme","charter","value","axiom","criterion","protocol","evolution-doc","wiki-entry","decision-log","mapping-registry"}
 NAME_RULES = [
     (re.compile(r"^c[1-9]-[a-z0-9-]+\.md$"), "criteria"),
     (re.compile(r"^p[1-9]-[a-z0-9-]+\.md$"), "protocols"),
@@ -22,7 +22,8 @@ NAME_RULES = [
     (re.compile(r"^(values|worldview)\.md$"), "axioms"),
     (re.compile(r"^glossary\.md$"), "wiki"),
     (re.compile(r"^README\.md$"), None),  # 各目录索引，任意目录合法
-    (re.compile(r"^(README|CHARTER)\.(zh-CN|en)\.md$"), "ROOT"),  # 根级双语后缀
+    (re.compile(r"^(README|CHARTER)\.(zh-CN|en)\.md$"), "ROOT"),
+    (re.compile(r"^(DECISIONS|MAPPING)\.md$"), "ROOT"),  # 治理台账（zh-only）  # 根级双语后缀
 ]
 # 脱敏词表外置：tools/.sanitize-words.txt（不入仓，.gitignore 已列）——开源的 lint 不得携带待脱敏名单本身
 SANITIZE_FILE = "tools/.sanitize-words.txt"
