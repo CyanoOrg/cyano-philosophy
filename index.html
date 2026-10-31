@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cyano-philosophy · 阅读器</title>
+<script src="tools/vendor/marked.min.js"></script>
+<script src="tools/vendor/mermaid.min.js"></script>
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--border:#30363d;--fg:#c9d1d9;--fg-dim:#8b949e;--accent:#58a6ff;--accent2:#d2a8ff;--ok:#3fb950;--warn:#d29922}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,"PingFang SC","Noto Sans SC",sans-serif;background:var(--bg);color:var(--fg);display:flex;height:100vh}
+#nav{width:280px;min-width:280px;background:var(--panel);border-right:1px solid var(--border);overflow-y:auto;padding:16px 0}
+#nav h1{font-size:15px;color:var(--fg);padding:4px 16px 12px;margin:0;border-bottom:1px solid var(--border)}
+#nav h1 span{color:var(--fg-dim);font-weight:400;font-size:12px;display:block;margin-top:2px}
+#langbar{display:flex;gap:6px;padding:0 16px 10px}
+#langbar button{background:#21262d;border:1px solid var(--border);color:var(--fg-dim);font-size:11px;padding:2px 10px;border-radius:10px;cursor:pointer}
+#langbar button.active{background:var(--accent);color:#0d1117;border-color:var(--accent);font-weight:600}
+.nav-group{padding:10px 0 4px}
+.nav-group>.gt{font-size:11px;color:var(--fg-dim);text-transform:uppercase;letter-spacing:.08em;padding:0 16px 4px}
+.nav-item{display:block;padding:4px 16px 4px 24px;color:var(--fg);text-decoration:none;font-size:13px;line-height:1.5;border-left:2px solid transparent;cursor:pointer}
+.nav-item:hover{background:#1c2129;color:var(--accent)}
+.nav-item.active{border-left-color:var(--accent);color:var(--accent);background:#1c2129}
+#main{flex:1;overflow-y:auto}
+#meta{position:sticky;top:0;background:var(--panel);border-bottom:1px solid var(--border);padding:8px 40px;font-size:12px;color:var(--fg-dim);display:flex;gap:16px;z-index:5}
+#meta .st-draft{color:var(--warn)}
+#content{max-width:860px;margin:0 auto;padding:32px 40px 120px;line-height:1.75;font-size:15px}
+#content h1{font-size:26px;border-bottom:1px solid var(--border);padding-bottom:12px;color:#f0f6fc}
+#content h2{font-size:20px;margin-top:40px;color:#f0f6fc;border-left:3px solid var(--accent);padding-left:10px}
+#content h3{font-size:16px;margin-top:28px;color:#e6edf3}
+#content a{color:var(--accent);text-decoration:none}
+#content a:hover{text-decoration:underline}
+#content blockquote{border-left:3px solid var(--accent2);margin:16px 0;padding:8px 16px;background:#161b22;color:var(--fg-dim);border-radius:0 6px 6px 0}
+#content blockquote p{margin:6px 0}
+#content code{background:#21262d;padding:2px 6px;border-radius:4px;font-size:.9em;font-family:ui-monospace,Menlo,monospace}
+#content pre{background:#161b22;border:1px solid var(--border);border-radius:8px;padding:16px;overflow-x:auto}
+#content pre code{background:none;padding:0}
+#content table{border-collapse:collapse;margin:16px 0;width:100%;font-size:14px}
+#content th,#content td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+#content th{background:#1c2129}
+#content tr:nth-child(even) td{background:#111519}
+#content .mermaid-box{background:#161b22;border:1px solid var(--border);border-radius:8px;padding:16px;margin:20px 0;text-align:center;overflow-x:auto}
+#content hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+#content strong{color:#f0f6fc}
+#err{color:var(--warn);padding:40px;font-size:14px;display:none}
+#placeholder{color:var(--fg-dim);padding:60px 40px;font-size:14px}
+#placeholder .big{font-size:22px;color:var(--fg);margin-bottom:12px}
+</style>
+</head>
+<body>
+<nav id="nav"><h1>cyano-philosophy<span id="tagline">真实感是价值的种子</span></h1>
+<div id="langbar"><button id="lang-zh" onclick="setLang('zh')">中文</button><button id="lang-en" onclick="setLang('en')">EN</button></div>
+<div id="navtree"><span style="color:var(--fg-dim);font-size:12px;padding:8px 16px">加载清单…</span></div></nav>
+<main id="main">
+  <div id="meta"></div>
+  <div id="placeholder"><div class="big">🜂 从左侧选择一篇开始</div>自包含阅读器：本地 vendor（marked+mermaid），manifest.json 驱动导航。</div>
+  <article id="content" style="display:none"></article>
+  <div id="err"></div>
+</main>
+<script>
+/* ── 双语：I18N + 语言状态 ── */
+const I18N = {
+  zh: {tagline:"真实感是价值的种子", ph:"🜂 从左侧选择一篇开始", ph2:"自包含阅读器：本地 vendor（marked+mermaid），manifest 驱动导航。"},
+  en: {tagline:"The sense of the real is the seed of value", ph:"🜂 Pick an entry from the left", ph2:"Self-contained reader: local vendor (marked + mermaid), manifest-driven navigation."}
+};
+let LANG = localStorage.getItem('reader-lang') || 'zh';
+function renderLangUI(){
+  document.getElementById('tagline').textContent = I18N[LANG].tagline;
+  document.getElementById('placeholder').innerHTML = `<div class="big">${I18N[LANG].ph}</div>${I18N[LANG].ph2}`;
+  document.getElementById('lang-zh').classList.toggle('active', LANG==='zh');
+  document.getElementById('lang-en').classList.toggle('active', LANG==='en');
+}
+function setLang(l){
+  if(l===LANG) return;
+  LANG = l; localStorage.setItem('reader-lang', l);
+  document.getElementById('content').style.display='none';
+  document.getElementById('placeholder').style.display='block';
+  boot();
+}
+/* ── manifest 驱动导航 ── */
+const PRE = '';
+let TREE = [];
+async function loadManifest(){
+  const mf = LANG==='en' ? 'manifest.en.json' : 'manifest.json';
+  const r = await fetch(mf + '?t=' + Date.now());
+  if(!r.ok) throw new Error(mf + ' HTTP ' + r.status);
+  const m = await r.json();
+  TREE = m.groups.flatMap(g => g.items.map(it => ({...it, group: g.g})));
+  const navtree = document.getElementById('navtree');
+  navtree.innerHTML = '';
+  m.groups.forEach(grp => {
+    const div = document.createElement('div'); div.className = 'nav-group';
+    div.innerHTML = `<div class="gt">${grp.g}</div>`;
+    grp.items.forEach(item => {
+      const a = document.createElement('div'); a.className = 'nav-item'; a.textContent = item.t; a.dataset.path = item.path;
+      a.onclick = () => load(item.path); div.appendChild(a);
+    });
+    navtree.appendChild(div);
+  });
+}
+
+/* ── 渲染引擎初始化：自然尺寸 + 阅读器同源配色 + 中文字体 ── */
+mermaid.initialize({
+  startOnLoad:false, theme:'base', securityLevel:'loose',
+  fontFamily:'"PingFang SC","Hiragino Sans GB","Noto Sans SC",sans-serif',
+  flowchart:{ useMaxWidth:false, htmlLabels:true, nodeSpacing:42, rankSpacing:58, padding:10 },
+  themeVariables:{
+    background:'transparent',
+    primaryColor:'#1c2a44', primaryTextColor:'#dbe4f0', primaryBorderColor:'#58a6ff',
+    lineColor:'#7d8896', secondaryColor:'#232a3d', tertiaryColor:'#161b22',
+    clusterBkg:'#10161d', clusterBorder:'#30363d',
+    edgeLabelBackground:'#161b22', fontSize:'15px'
+  }
+});
+marked.setOptions({breaks:false,gfm:true});
+
+/* ── md 加载与渲染 ── */
+let seq = 0;
+async function load(path){
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.path === path));
+  document.getElementById('placeholder').style.display = 'none';
+  const content = document.getElementById('content'), meta = document.getElementById('meta'), err = document.getElementById('err');
+  err.style.display = 'none'; content.style.display = 'none';
+  try{
+    const bust = PRE + path + (path.includes('?') ? '&' : '?') + 't=' + Date.now();
+    const res = await fetch(bust);
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    let text = await res.text();
+    /* frontmatter 提取 */
+    let fm = null;
+    const fmMatch = text.match(/^---\n([\s\S]*?)\n---\n/);
+    if(fmMatch){
+      fm = {};
+      fmMatch[1].split('\n').forEach(l => { const i = l.indexOf(':'); if(i > 0) fm[l.slice(0,i).trim()] = l.slice(i+1).trim(); });
+      text = text.slice(fmMatch[0].length);
+    }
+    meta.innerHTML = `<span>${path}</span>` + (fm ? ` <span>${fm.type||''}</span> <span class="${fm.status==='draft'?'st-draft':''}">${fm.status||''}</span> <span>${fm.updated||''}</span>` : '');
+    /* 渲染 markdown */
+    const rawHtml = marked.parse(text);
+    content.innerHTML = rawHtml;
+    content.style.display = 'block';
+    /* mermaid 块转换：先收集再逐个异步替换 */
+    const mermaidCodes = [];
+    content.querySelectorAll('pre code.language-mermaid').forEach(code => {
+      mermaidCodes.push({ el: code, text: code.textContent });
+    });
+    for(let i = 0; i < mermaidCodes.length; i++){
+      const { el, text: src } = mermaidCodes[i];
+      const holder = document.createElement('div');
+      holder.className = 'mermaid-box';
+      const renderId = `m${++seq}-${i}`;
+      try{
+        const { svg } = await mermaid.render(renderId, src);
+        holder.innerHTML = svg;
+      }catch(e){
+        holder.innerHTML = `<pre style="text-align:left;color:var(--warn);font-size:12px">${String(e.message || e).replace(/</g,'&lt;')}</pre>`;
+      }
+      el.parentElement.replaceWith(holder);
+    }
+    /* 相对链接内部化 */
+    content.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if(href.startsWith('#')){ a.onclick = e => { e.preventDefault(); const t = document.getElementById(href.slice(1)); t && t.scrollIntoView({behavior:'smooth'}); }; return; }
+      if(href.startsWith('http')){ a.target = '_blank'; return; }
+      const dir = path.includes('/') ? path.slice(0, path.lastIndexOf('/') + 1) : '';
+      let norm = '';
+      try { norm = new URL(dir + href, 'http://reader.local/').pathname.replace(/^\//, ''); } catch(e) { norm = dir + href; }
+      if(!norm.endsWith('.md')) norm += '.md';
+      a.onclick = e => { e.preventDefault(); if(href.endsWith('/')) { window.open(PRE + norm.replace(/\/$/, ''), '_blank'); return; } if(TREE.some(it => it.path === norm)) load(norm); else window.open(norm, '_blank'); };
+    });
+    document.getElementById('main').scrollTop = 0;
+  }catch(e){
+    err.style.display = 'block';
+    err.textContent = `加载失败：${path} — ${e.message}。若以 file:// 打开，请改用 http 服务。`;
+  }
+}
+/* ── 启动 ── */
+function boot(){ renderLangUI(); loadManifest().catch(e => {
+  document.getElementById('navtree').innerHTML = `<span style="color:var(--warn);font-size:12px;padding:8px 16px">${I18N[LANG].tagline ? '清单加载失败' : 'Manifest load failed'}：${e.message}</span>`;
+}); }
+boot();
+</script>
+</body>
+</html>
