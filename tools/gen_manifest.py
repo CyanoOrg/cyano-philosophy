@@ -64,7 +64,7 @@ def build(lang):
      "en": ["Axioms","Criteria","Protocols","Wiki","Evolution Archive"],
     }[lang]
     ov = "总览" if lang == "zh" else "Overview"
-    rt = [("README.zh-CN.md","体系总览"),("CHARTER.zh-CN.md","修订治理条约")] if lang=="zh" else [("README.md","System overview · diagram"),("CHARTER.en.md","Revision governance charter")]
+    rt = [("README.zh-CN.md","体系总览"),("CHARTER.zh-CN.md","修订治理条约"),("DECISIONS.md","治理决策账本"),("MAPPING.md","命题映射台账")] if lang=="zh" else [("README.md","System overview · diagram"),("CHARTER.en.md","Revision governance charter")]
     groups = [{"g": ov, "items": [{"path": p, "t": t} for p,t in rt]},
               scan(g[0], f"axioms/{sub}", lang, skip_readme=True),
               scan(g[1], f"criteria/{sub}", lang),

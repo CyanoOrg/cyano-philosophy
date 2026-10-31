@@ -12,6 +12,14 @@
         {
           "path": "CHARTER.zh-CN.md",
           "t": "修订治理条约"
+        },
+        {
+          "path": "DECISIONS.md",
+          "t": "治理决策账本"
+        },
+        {
+          "path": "MAPPING.md",
+          "t": "命题映射台账"
         }
       ]
     },

@@ -17,7 +17,7 @@ scope:
     - "修订治理流程（CHARTER.zh-CN.md 承载）"
 
 agent_rules:
-  frontmatter_required: "每文档必带 type/language/status/updated 四字段（evolution 另加 source-date）。type 枚举：readme | charter | value | axiom | criterion | protocol | evolution-doc | wiki-entry。updated 语义 = 内容版本最后变更时间（非文件落盘时间；Locale-Sync 变更时 zh/en 同步刷新）"
+  frontmatter_required: "每文档必带 type/language/status/updated 四字段（evolution 另加 source-date）。type 枚举：readme | charter | value | axiom | criterion | protocol | evolution-doc | wiki-entry | decision-log | mapping-registry。updated 语义 = 内容版本最后变更时间（非文件落盘时间；Locale-Sync 变更时 zh/en 同步刷新）"
   language_dirs: "混合规范：根级文档用文件级后缀（README.zh-CN.md / CHARTER.zh-CN.md，GitHub 原生识别；en 变体待术语表后）；内容目录（axioms/criteria/protocols/evolution/wiki）内分 zh-CN/（源）与 en/（镜像）子目录，同一文档两语言同文件名（同 slug 镜像）；en 已于术语表 v0.2 后启动并于 2026-10-30 全量落地（zh/en 同为 draft，Locale-Sync 同步演进；en 目录 README 为镜像导航索引，zh 侧无目录 README——源语言目录即入口）"
   naming_convention: "criteria: c<N>-<slug>.md（编号即 C-N 锚，如 c2-dual-threshold.md）；protocols: p<N>-<slug>.md；evolution: <YYYY-MM-DD>-<slug>.md（编年）；wiki: <slug>.md（术语词条）；axioms: 固定入口名（values.md / worldview.md），A-x 为文内节编号非文件级"
   numbering: "公理 A-x / 判据 C-x / 协议 P-x；编号即锚，修订不重编号，superseded 保留号"
