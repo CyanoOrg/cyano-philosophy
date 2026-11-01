@@ -2,7 +2,7 @@
 type: axiom
 language: en
 status: draft
-updated: 2026-10-31
+updated: 2026-11-01
 ---
 
 # Worldview Axioms and the Unified Criterion
@@ -16,9 +16,9 @@ updated: 2026-10-31
 | # | Axiom | One sentence |
 |---|---|---|
 | A1 | **Process axiom** | Value lives in the process; the product is only a receipt |
-| A2 | **Experience axiom** | Intelligence grows in interaction, not in corpora — the ceiling of human data is already within reach; the increment lies in experience |
+| A2 | **Experience axiom** | Intelligence takes the settled corpus as its ground and grows in interaction — sedimentation makes it possible, interaction brings it alive. Bet: the ceiling of human data is within reach; the increment lies in experience (an empirical question, not a settled conclusion) |
 | A3 | **Sovereignty axiom** (structural formulation) | **Sovereignty = the claim over accumulated negentropy** — wherever the run history lives, there the returns accumulate; not a normative wish, but the ownership condition for the other three axioms to take effect |
-| A4 | **Reality axiom** (differential formulation) | **The real = differential change that cannot be cheaply faked** — temporal evidence invites forgery attacks (fake cadence, idle trace-spinning); the counterfactual-checkable behavioral differential produced by a real process is hard to sustainably fake |
+| A4 | **Reality axiom** (differential formulation) | **The real = differential change that cannot be cheaply faked** — temporal evidence invites forgery attacks (fake cadence, idle trace-spinning); the counterfactual-checkable behavioral differential produced by a real process is hard to sustainably fake. This axiom delimits **verifiable provenance** (authenticity): it warrants "indeed from the process it claims," not "the content is true" — the truth of content is handled by C3 verification interrogation and the adjudication layer |
 
 **In one closing line: the process is the value, experience is the intelligence, sovereignty is the dignity, the real is the time** — in the synthetic age, what a person retains of the real is owning their own process, experience, and agents.
 
@@ -85,6 +85,7 @@ Treat the axioms as **working hypotheses**; do not wait for perfection before de
 ## Revision History
 
 - **2026-09-14 (v1.0)**: axioms established; sovereignty adopts the structural formulation (claim over accumulated negentropy); the real adopts the differential formulation; process/experience retain their original statements (with mechanistic support and empirical records — hard enough as directional bets, with margin left as conclusions).
+- **2026-11-01 (statement refinement)**: A2 refined from antithetical rhetoric ("not in corpora") to a dialectical structure (sedimentation makes it possible, interaction brings it alive) — from external review feedback: the antithesis was rhetorical overreach; the original argument (the Sutton line) is an increment claim, not an ontological denial. Bet status marked (empirical, not settled). A4 gains its domain statement (verifiable provenance vs truth of content; the truth chain lives in C3 and the adjudication layer).
 - **2026-09-24 (second batch)**: "discrete handoff → continuous attunement" promoted to criterion rank; **the distribution unit = the verifiable trajectory**; the protocol-theory batch (agora principles, necessary properties of protocols, visibility = pricing function) adopted at the principle layer — the criterion part has been incorporated into [criteria](../../criteria/en/), the protocol part in the [Agora Protocol (P-1)](../../protocols/en/p1-agora.md).
 
 ---

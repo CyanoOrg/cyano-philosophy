@@ -2,7 +2,7 @@
 type: wiki-entry
 language: en
 status: draft
-updated: 2026-10-31
+updated: 2026-11-01
 ---
 
 # Glossary
@@ -40,11 +40,11 @@ graph BT
 
 **Process axiom** — value lives in the process; the product is only a receipt. 〔worldview · A1〕 The values manifesto registers this as the "Process branch": the real lives in the process; mistaking the receipt for the value is the first misreading of the real. 〔values · Branches〕
 
-**Experience axiom** — intelligence grows in interaction, not in corpora. 〔worldview · A2〕 The manifesto's "Experience branch": accumulation without interaction is dead sediment. 〔values · Branches〕
+**Experience axiom** — intelligence takes the settled corpus as its ground and grows in interaction — sedimentation makes it possible, interaction brings it alive. Bet: the ceiling of human data being within reach, the increment lying in experience, is an empirical question (not a settled conclusion). 〔worldview · A2〕 The manifesto's "Experience branch": accumulation without interaction is dead sediment. 〔values · Branches〕
 
 **Sovereignty axiom** — sovereignty = the claim over accumulated negentropy. 〔worldview · A3〕 The manifesto's "Sovereignty branch": the accumulation of the real belongs to those who create it. 〔values · Branches〕
 
-**Reality axiom** — the real = differential change that cannot be cheaply faked. 〔worldview · A4〕 The manifesto's "Differential branch": judged not by what is said, but by checkable, hard-to-forge change. 〔values · Branches〕
+**Reality axiom** — the real = differential change that cannot be cheaply faked. **Disambiguation**: this axiom's domain is authenticity (verifiable provenance — warranting "indeed from the process it claims"), not truth of content — a genuine process can deliver a false conclusion. The truth chain: C3 verification interrogation (evidence levels) → tiered courts (dispute adjudication). 〔worldview · A4〕 The manifesto's "Differential branch": judged not by what is said, but by checkable, hard-to-forge change. 〔values · Branches〕
 
 **Negentropy accumulation** — the net growth of order; the unit of account for sovereignty. 〔worldview · A3; worldview · §3〕
 

@@ -2,14 +2,14 @@
 type: criterion
 language: en
 status: draft
-updated: 2026-10-30
+updated: 2026-11-01
 ---
 
 # C-3 Verification Interrogation
 
 ## Definition
 
-Any assertion entering a decision chain must first pass two interrogations: **① where is the evidence** — is it a firsthand-verified fact, or a relay, an inference, a performance? **② who can re-verify** — is its verification independently repeatable, or self-attested only?
+Any assertion entering a decision chain must first pass two interrogations: **① where is the evidence** — is it a firsthand-verified fact, or a relay, an inference, a performance? **② who can re-verify** — is its verification independently repeatable, or self-attested only? Division of labor with A4: A4 verifies provenance (what deserves to enter the verification channel); this criterion verifies content (whether the assertion is credible).
 
 ## Judgment
 
