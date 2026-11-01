@@ -2,7 +2,7 @@
 type: wiki-entry
 language: zh-CN
 status: draft
-updated: 2026-10-31
+updated: 2026-11-01
 ---
 
 # 术语表（glossary）
@@ -41,11 +41,11 @@ graph BT
 
 **过程公理**（process axiom）——价值在过程，产物只是收据。〔worldview·A1〕values 宣言称「过程枝」：真实活在过程里，产物只是过程的收据，把收据当价值本身是对真实的第一次误认。〔values·枝〕
 
-**经验公理**（experience axiom）——智能在交互中生长，不在语料中沉淀。〔worldview·A2〕values 宣言称「经验枝」：真实在交互中生长；没有交互的积累是死的堆积。〔values·枝〕
+**经验公理**（experience axiom）——智能以语料为根基、在交互中生长——沉淀使之可能，交互使之活化。〔worldview·A2〕押注：人类数据天花板已可触、增量全在经验为实证中命题（非定论）。values 宣言称「经验枝」：真实在交互中生长；没有交互的积累是死的堆积。〔values·枝〕
 
 **主权公理**（sovereignty axiom）——主权 = 负熵积累的归属权：运行史活在谁的基底上，收益就积累给谁。〔worldview·A3〕values 宣言称「主权枝」：真实的积累归属创造它的人。〔values·枝〕
 
-**真实公理**（reality axiom）——真实 = 不可廉价伪造的差分改变。〔worldview·A4〕values 宣言称「差分枝」：真实的判定——不看说了什么，看是否因真实的过程产生了可查证、难伪造的改变。〔values·枝〕
+**真实公理**（reality axiom）——真实 = 不可廉价伪造的差分改变。〔worldview·A4〕**辨析**：本公理的域是出处可验（authenticity——担保「确出自其所声称的过程」），不是内容为真（truth）——真实流程可交付假结论（出资造假反例）。truth 的处理链：C3 验真质询（证据等级）→ 分级法院（争议裁决）。中文「真实」双义合并是本体系最需辨析的接缝。values 宣言称「差分枝」：真实的判定——不看说了什么，看是否因真实的过程产生了可查证、难伪造的改变。〔values·枝〕
 
 **负熵积累**（negentropy accumulation）——秩序的净增长；主权的计量对象。〔worldview·A3；worldview·§3〕
 
