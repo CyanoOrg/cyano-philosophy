@@ -61,5 +61,5 @@ flowchart LR
 ## Archiving Notes
 
 - Each entry = sanitized original + editor's note (what judgment this discussion changed at the time; where it links into the canon)
-- Sanitization at the whole repository's strictest level (the forbidden list lives in the root .norm desensitization red line)
+- Sanitization at the whole repository's strictest level
 - Related documents not selected (the systematic-review draft = panoramic index; sound field and projection; the double-loop framework, etc.) are in the editor's-note citation pool; not separate entries

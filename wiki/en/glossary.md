@@ -2,12 +2,12 @@
 type: wiki-entry
 language: en
 status: draft
-updated: 2026-11-01
+updated: 2026-11-02
 ---
 
 # Glossary
 
-> The terminology SSOT of the CyanoOrg philosophy system — one entry per term: term + definition + canon anchor. zh-CN is the source language; this mirror follows the Locale-Sync rule. **Reading note**: the brackets 〔〕 mark canon anchors (format spec in the root .norm anchor_format); section names use localized forms (Seed · 枝 · red line). **Coverage boundary**: entries anchor to canon only — concepts not yet canonized (living in the evolution archive) gain entries upon canonization.
+> The terminology SSOT of the CyanoOrg philosophy system — one entry per term: term + definition + canon anchor. zh-CN is the source language. **Reading note**: the brackets 〔〕 mark canon anchors; section names use localized forms (Seed · 枝 · red line). **Coverage boundary**: entries anchor to canon only — concepts not yet canonized (living in the evolution archive) gain entries upon canonization.
 
 ## Core Term Network
 
