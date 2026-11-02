@@ -1,8 +1,8 @@
 ---
 type: axiom
 language: en
-status: draft
-updated: 2026-10-27
+status: ratified
+updated: 2026-11-02
 ---
 
 # The Sense of the Real — The Seed of Value
@@ -71,6 +71,6 @@ So we publish it — for publishing is the first step of handing it to the world
 
 ---
 
-*This document is the values entry point of the CyanoOrg philosophy. The branches are phrasings in the seed's register; precise mechanism terms (intelligence / negentropy / differential change, etc.) defer to [worldview.md](../en/worldview.md); revisions follow [CHARTER](../../CHARTER.en.md).*
+*This document is the values entry point of the CyanoOrg philosophy. The branches are phrasings in the seed's register; precise mechanism discussion see [worldview.md](../en/worldview.md); revisions follow [CHARTER](../../CHARTER.en.md).*
 
 *Locale-Sync: this en mirror of [values.md](../zh-CN/values.md) was translated in the same commit window; the zh-CN version is the source of authority.*

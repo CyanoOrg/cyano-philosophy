@@ -1,13 +1,13 @@
 ---
 type: axiom
 language: en
-status: draft
+status: ratified
 updated: 2026-11-02
 ---
 
 # Worldview Axioms and the Unified Criterion
 
-> This document is the structural-layer canon (Layer Zero) of the CyanoOrg philosophy system. The values entry point is [values.md](values.md) — the unfolding in the seed's register; this document gives the precise mechanism statements (authoritative for terms such as intelligence / negentropy / differential change).
+> This document is the structural-layer canon (Layer Zero) of the CyanoOrg philosophy system. The values entry point is [values.md](values.md) — the unfolding in the seed's register; this document gives the precise mechanism statements.
 
 ---
 
@@ -58,11 +58,11 @@ Three notes of entropy-reduction economics (the cost side):
 
 ## 4. Trend Judgments
 
-1. **The three-stage history of the sense of the real**: the real as endorsed (institutional proxy) → the real as diluted (synthesis killing "cheap trust") → the real as cultivated (the real turning from noun to verb; the only path for an individual to reshape the real is owning an unoutsourceable process) — the decentralization of the sense of the real.
-2. **Distribution switching axes**: in the era of scarce content, platform power came from controlling distribution; once generation cost approaches zero, **what is scarce is no longer content but credible filtering**. The personal agent = an adversarial filter representing the person.
-3. **Pricing benchmark migration**: product appearance → process evidence → **differential change**. Process proof will face forgery attacks (fake cadence, idle trace-spinning); faking hours is cheap, faking learning is expensive — the endpoint is "verifiable change caused by a process." The true invariant is the **incident-to-learning conversion rate**.
-4. **Three industry stages**: infrastructure → massive applications → native applications; model companies are fated to be infrastructure. The next vacant niche is the agent's "browser" — most likely not a traffic portal but a **trust portal** (an inter-agent verification protocol layer).
-5. **Convergence on the architecture side**: knowledge grows on its carrier (mortal computation), experience rather than corpora as the source (Era of Experience), prediction rather than reconstruction as the form. The LLM is a product engine without a process; **trace = the fuel of the era of experience** — turning working processes into verifiable trajectories is minting a strategic reserve for that era in advance.
+1. **The three-stage history of the sense of the real**: the real as endorsed (institutional proxy) → the real as diluted (synthesis killing "cheap trust") → the real as cultivated (the real turning from noun to verb; the only path for an individual to reshape the real is owning an unoutsourceable process) — the decentralization of the sense of the real. Currently in the diluted-to-cultivated transition (2026 observation: institutional endorsement failing at accelerating pace).
+2. **Distribution switching axes**: in the era of scarce content, platform power came from controlling distribution; once generation cost approaches zero, **what is scarce is no longer content but credible filtering**. The personal agent = an adversarial filter representing the person. This inference depends on the arrival of the agent-adoption inflection point.
+3. **Pricing benchmark migration**: product appearance → process evidence → **differential change**. Process proof will face forgery attacks (fake cadence, idle trace-spinning); faking hours is cheap, faking learning is expensive — the endpoint is "verifiable change caused by a process." The true invariant is the **incident-to-learning conversion rate**. Receipt-layer de facto standards are estimated to prototype within 1-2 years.
+4. **Three industry stages**: infrastructure → massive applications → native applications; model companies are fated to be infrastructure. The next vacant niche is the agent's "browser" — not a traffic portal but a **trust portal** (an inter-agent verification protocol layer). Inference basis: model homogenization already visible + existing protocol races all bypass verification.
+5. **Convergence on the architecture side**: knowledge grows on its carrier (mortal computation), experience rather than corpora as the source (Era of Experience), prediction rather than reconstruction as the form. The LLM is a product engine without a process; **trace = the fuel of the era of experience** — turning working processes into verifiable trajectories is minting a strategic reserve for that era in advance. Three lines converging independently — the strongest inference of this group.
 
 ## 5. Commonality: The Agora as Protocol
 

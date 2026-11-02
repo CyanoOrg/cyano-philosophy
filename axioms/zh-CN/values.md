@@ -1,8 +1,8 @@
 ---
 type: axiom
 language: zh-CN
-status: draft
-updated: 2026-10-30
+status: ratified
+updated: 2026-11-02
 ---
 
 # 真实感——价值的种子
@@ -71,4 +71,4 @@ graph BT
 
 ---
 
-*本文档是 CyanoOrg 哲学体系的价值观入口。枝为种子语境的展开表述，精确机制术语（智能/负熵/差分改变等）以 [worldview.md](worldview.md) 为准；修订遵循 [CHARTER](../../CHARTER.zh-CN.md)。*
+*本文档是 CyanoOrg 哲学体系的价值观入口。枝为种子语境的展开表述，精确机制论述见 [worldview.md](worldview.md)；修订遵循 [CHARTER](../../CHARTER.zh-CN.md)。*
