@@ -1,0 +1,45 @@
+---
+metadata:
+  layer: module
+  profile: module
+  scope: protocols/
+  version: "1.0"
+  description: 协议目录规范——文档结构与编号体系
+  last_updated: 2026-11-02
+
+template:
+  required_files: [zh-CN/p1-agora.md, zh-CN/p2-protocol-stack.md]
+  required_directories: [zh-CN/, en/]
+  naming_convention:
+    - "继承根 naming_convention（p<N>-<slug>.md）"
+  single_source_of_truth:
+    - source: zh-CN/p1-agora.md
+      for: 广场原则与 T 编号（en 镜像随行）
+    - source: zh-CN/p2-protocol-stack.md
+      for: 协议栈结构与 N 编号（en 镜像随行）
+
+scope:
+  covers:
+    - "协议文档结构"
+    - "T/N 编号体系"
+  NOT:
+    - "全局规则（命名/编号/脱敏红线/锚格式/双语/治理）——继承根 .norm"
+
+agent_rules:
+  update_order:
+    - "原则层修订（T/N 条目变更）须注明公理推导源"
+    - "协议修订走 PR（canon(zh) 与 mirror(en) 同一 commit）"
+  structure: "结构：定义 → 原则（T 编号）→ 必要性质（N 推导源）→ 合拢 → 溯源 / 与种子的关系"
+  t_n_numbering: "原则 T<n>（agora principle）/ 必要性质 N<n>——均为文内编号；锚格式继承根 anchor_format（T<n>｜N<n>）"
+cross_references:
+  - target: ../axioms/zh-CN/worldview.md
+    boundary: "必要性质的公理推导源"
+    sync: auto_pull
+    validation: strict
+    description: "必要性质逐条从公理推出，公理变更须回查性质表"
+
+---
+
+# protocols 目录规范
+
+协议哲学：原则层与必要性质的推导结构（从公理逐条推出）是协议区别于一般设计文档的本质。

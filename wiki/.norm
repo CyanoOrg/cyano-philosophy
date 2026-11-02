@@ -1,0 +1,45 @@
+---
+metadata:
+  layer: module
+  profile: module
+  scope: wiki/
+  version: "1.0"
+  description: 术语层目录规范——收录边界与词条结构
+  last_updated: 2026-11-02
+
+template:
+  required_directories: [zh-CN/, en/]
+  required_files: [glossary.md]
+  naming_convention:
+    - "glossary 固定文件名（继承根）"
+  single_source_of_truth:
+    - source: zh-CN/glossary.md
+      for: 术语（en 镜像随行；正典正文用词以词条为准）
+
+scope:
+  covers:
+    - "词条收录边界"
+    - "词条结构"
+    - "辨析段格式"
+  NOT:
+    - "全局规则（命名/编号/脱敏红线/锚格式/双语/治理）——继承根 .norm"
+
+agent_rules:
+  update_order:
+    - "新词条先查正典锚存在（lint 死链检查守门）"
+    - "概念正典化后立词条（先正典后词条，顺序不可反）"
+  canon_only: "词条只锚正典——未正典化概念（活在演化档案）不立词条，待正典收编后再立"
+  entry_structure: "词条 = 中文词 + （英文括号注）+ 一句定义 + 正典锚〔〕；辨析段（Disambiguation）可选——用于域边界辨析（先例：真实公理 authenticity/truth、验证等级词条）"
+  ssot: "glossary 为术语唯一权威（en 镜像随行）；正典正文用词与词条冲突时以词条为准并回改正文"
+cross_references:
+  - target: ../axioms/zh-CN/worldview.md
+    boundary: "词条锚的正典目标层"
+    sync: auto_pull
+    validation: strict
+    description: "词条只锚正典——worldview/criteria/protocols 为锚目标"
+
+---
+
+# wiki 目录规范
+
+术语 SSOT：词条只锚正典是收录边界（防档案概念混入）；辨析段是本目录特有的精确性工具。

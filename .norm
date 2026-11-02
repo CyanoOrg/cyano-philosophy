@@ -27,11 +27,6 @@ template:
     - "evolution: <YYYY-MM-DD>-<slug>.md（编年）"
     - "wiki: <slug>.md（术语词条）"
     - "axioms: 固定入口名 values.md / worldview.md（A-x 为文内节编号非文件级）"
-  document_structure:
-    - "criterion 四节：定义 / 判定 / 溯源 / 与种子的关系"
-    - "protocol：定义 → 原则（T 编号）→ 必要性质 → 溯源 / 关系"
-    - "evolution：脱敏原文 + 编者按（当时改变什么 / 正典衔接 / 演化线索 / 方法沉淀）"
-    - "glossary：词条 = 词 + 定义 + 正典锚〔〕，只锚正典"
   single_source_of_truth:
     - source: manifest.json
       for: 阅读器导航清单（tools/gen_manifest.py 唯一写入者，lint 幂等守门）
@@ -50,7 +45,6 @@ agent_rules:
   numbering: "公理 A-x / 判据 C-x / 协议 P-x；编号即锚，修订不重编号，superseded 保留号"
   desensitization_redline: "禁入公开仓：私人人名与个人语境、内部工具链与部署细节、未公开产品名、agent 内部协作细节"
   language_source: "zh-CN 为源语言；en 镜像同 commit 同步（en 于 glossary v0.2 定稿后启动，2026-10-30 全量落地）"
-  writing_style: "values 宣言体优先；axioms/criteria 结构化表述优先；散论不入正典"
   diagrams_are_projections: "涉及 A/C/P 命题的 mermaid 节点须带编号（概念节点可不带）；图是正典投影不构成第二事实源"
 
   # ── 仓库管理规范（repo management；2026-10-31 立，参照 CyanoOrg/norm-spec 实践）──
@@ -59,7 +53,6 @@ agent_rules:
     branch_protection: "main 禁 force-push（演化档案 append-only 的 git 层硬保障；平台侧设置由 owner 开启）"
     commit_convention: "主题行英文 conventional + 本仓语义 type/scope：type = canon | archive | mirror | feat | chore | docs，scope = zh | en（如 canon(zh) / mirror(en)）；正文语言自由。Locale-Sync 硬纪律：zh 变更与对应 en 镜像同一 commit；init 批次例外（诞生期分层叙事），此后严格执行"
     versioning: "仓库级 semver tag：draft 期 0.x 系列（init 后打 v0.1.0，内容批修订 bump minor）；owner 终审 ratified 后打 v1.0.0（工作假设 → 批准正典）。CHARTER 引用锚 A1@v1.0 解析为仓库 tag v1.0.0 时的 A1 表述；命题版本（worldview 修订记录）与仓库 tag 分层：前者是命题修订史，后者是全仓快照锚"
-    evolution_append_only: "evolution/ 原文与编者按事实性内容 append-only（git 层由禁 force-push 保障）；机械修复例外：frontmatter/链接/概念名 sync 类跟进。远期可加 pre-commit 检查（diff 中 evolution 既有文件的实质修改拒绝）"
     generated_artifacts: "manifest.json / manifest.en.json 仅经 tools/gen_manifest.py 写入；tools/lint.py 幂等检查守门（--check 逐字节比对）"
     pr_process: "axioms 层 PR 必须带提案+反驳期说明（CHARTER §1 门槛的 PR 形态）；外部翻译 PR 先动 wiki/glossary（CHARTER §3）。哲学讨论与修订提案走 issue"
     mirroring: "GitHub CyanoOrg/cyano-philosophy 为唯一主仓与公开工作面（code / issue / PR / Pages）；不设第二权威拷贝"

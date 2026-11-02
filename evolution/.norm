@@ -1,0 +1,46 @@
+---
+metadata:
+  layer: module
+  profile: module
+  scope: evolution/
+  version: "1.0"
+  description: 演化档案目录规范——append-only 边界与编者按结构
+  last_updated: 2026-11-02
+
+template:
+  required_files: [README.md]
+  required_directories: [zh-CN/, en/]
+  naming_convention:
+    - "继承根 naming_convention（<YYYY-MM-DD>-<slug>.md）"
+  single_source_of_truth:
+    - source: zh-CN/README.md
+      for: 篇目单与演化时间线（en 镜像随行）
+
+scope:
+  covers:
+    - "档案不可改写的边界"
+    - "编者按结构"
+    - "目录特有 frontmatter"
+  NOT:
+    - "全局规则（命名/编号/脱敏红线/锚格式/双语/治理）——继承根 .norm"
+
+agent_rules:
+  update_order:
+    - "新档案篇目：先过脱敏审查（全仓最高等级）再收录"
+    - "编者按概念名 sync 随正典改名同 commit 跟进（机械修复例外）"
+  append_only: "原文与编者按事实性内容 append-only（git 层由 main 禁 force-push 保障）；机械修复例外：frontmatter / 链接 / 概念名 sync 类跟进"
+  editors_note_structure: "编者按四段式：这篇讨论当时改变了什么 / 与正典的衔接 / 演化线索 / 方法论沉淀"
+  sanitization_level: "本目录脱敏等级全仓最高（禁项清单见根 .norm 脱敏红线）"
+  source_date: "frontmatter 特有 source-date 字段（源讨论日期，文件名编年与之一致）"
+cross_references:
+  - target: ../criteria/zh-CN/README.md
+    boundary: "编者按的正典衔接目标（判据库索引）"
+    sync: auto_pull
+    validation: strict
+    description: "编者按衔接条目指向判据库时以此为准"
+
+---
+
+# evolution 目录规范
+
+档案是推导现场：append-only 保障历史不可改写；编者按是编纂层（活），事实内容与机械修复的边界见 agent_rules。

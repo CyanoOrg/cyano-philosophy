@@ -1,0 +1,44 @@
+---
+metadata:
+  layer: module
+  profile: module
+  scope: criteria/
+  version: "1.0"
+  description: 判据库目录规范——文档结构与判定可操作化
+  last_updated: 2026-11-02
+
+template:
+  required_files: [README.md]
+  required_directories: [zh-CN/, en/]
+  naming_convention:
+    - "继承根 naming_convention（c<N>-<slug>.md）"
+  single_source_of_truth:
+    - source: zh-CN/README.md
+      for: 判据索引与使用决策流（en 镜像随行）
+
+scope:
+  covers:
+    - "判据文档的四节结构"
+    - "判定节的可操作化要求"
+  NOT:
+    - "全局规则（命名/编号/脱敏红线/锚格式/双语/治理）——继承根 .norm"
+
+agent_rules:
+  update_order:
+    - "新判据入库：先审与种子的关系（正典衔接）再审结构"
+    - "判据修订走 PR（canon(zh) 与 mirror(en) 同一 commit）"
+  structure: "四节固定结构：定义 / 判定 / 溯源 / 与种子的关系"
+  judgment_operability: "判定节须可操作（可执行的判定步骤或信号），不止原则宣示"
+  numbering_note: "C-N 编号即锚、修订不重编号——继承根 numbering"
+cross_references:
+  - target: ../axioms/zh-CN/worldview.md
+    boundary: "判据的公理推导源"
+    sync: auto_pull
+    validation: strict
+    description: "判据从公理推出，推导源变更须回查判据"
+
+---
+
+# criteria 目录规范
+
+判据是裁决工具：结构固定使工具可比对、可引用；判定节的可操作性是判据区别于原则宣示的本质。

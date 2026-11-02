@@ -1,0 +1,47 @@
+---
+metadata:
+  layer: module
+  profile: module
+  scope: axioms/
+  version: "1.0"
+  description: 正典层目录规范——双文档分界与比喻分层
+  last_updated: 2026-11-02
+
+template:
+  required_directories: [zh-CN/, en/]
+  required_files: [values.md, worldview.md]
+  naming_convention:
+    - "固定入口名（继承根 naming_convention）"
+  single_source_of_truth:
+    - source: zh-CN/worldview.md
+      for: 公理表述与修订记录（en 镜像随行）
+    - source: zh-CN/values.md
+      for: 种子表述与枝比喻（en 镜像随行）
+
+scope:
+  covers:
+    - "values / worldview 的文体分界"
+    - "枝比喻的分层限定"
+    - "修订记录结构"
+  NOT:
+    - "全局规则（命名/编号/脱敏红线/锚格式/双语/治理）——继承根 .norm"
+
+agent_rules:
+  update_order:
+    - "公理表述变更须同步修订记录（append-only）"
+    - "比喻分层边界（branch_metaphor_boundary）不随正文改版漂移——改边界须走治理流程"
+  branch_metaphor_boundary: "枝比喻的分层限定：values 宣言内保留种子/枝完整比喻（宣言体是它的家）；正典层（worldview / criteria / protocols）只用正式名词（公理 / 判据 / 协议）"
+  genre_division: "values = 宣言体（修辞合法）；worldview = 结构化正典（机制表述精确优先——断言须带证据状态，先例：A2 押注重构）"
+  revision_record: "worldview 修订记录 append-only（命题修订史）；尾注为引用式（修订遵循 CHARTER 链接，不复述门槛）"
+cross_references:
+  - target: ../wiki/zh-CN/glossary.md
+    boundary: "术语权威（正文用词以词条为准）"
+    sync: auto_pull
+    validation: strict
+    description: "正典正文用词与词条冲突时以词条为准并回改正文"
+
+---
+
+# axioms 目录规范
+
+正典层的两条文体各自成立：宣言求力量，公理求精确——分界规则见 agent_rules。比喻分层限定（2026-10-30 裁决）在此成文。
