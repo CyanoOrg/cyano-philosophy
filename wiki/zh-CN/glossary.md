@@ -1,7 +1,7 @@
 ---
 type: wiki-entry
 language: zh-CN
-status: draft
+status: ratified
 updated: 2026-11-02
 ---
 

@@ -1,7 +1,7 @@
 ---
 type: evolution-doc
 language: en
-status: draft
+status: ratified
 updated: 2026-11-02
 ---
 

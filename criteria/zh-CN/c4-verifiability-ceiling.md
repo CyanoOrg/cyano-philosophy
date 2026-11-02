@@ -1,7 +1,7 @@
 ---
 type: criterion
 language: zh-CN
-status: draft
+status: ratified
 updated: 2026-10-30
 ---
 

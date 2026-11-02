@@ -1,7 +1,7 @@
 ---
 type: readme
 language: en
-status: draft
+status: ratified
 updated: 2026-10-30
 ---
 
