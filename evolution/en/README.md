@@ -2,7 +2,7 @@
 type: evolution-doc
 language: en
 status: draft
-updated: 2026-10-31
+updated: 2026-11-02
 ---
 
 # The Evolution Archive (evolution/)
@@ -58,9 +58,8 @@ flowchart LR
 |---|---|---|---|
 | 10 | The structure of the vacuum period and the organization's dissolution sequence (sanitized) | 10-05 | Organizational philosophy standing alone: the coordination→adjudication→distribution dissolution sequence; power vs. density; the seedling-stage program |
 
-## Archiving Rules
+## Archiving Notes
 
 - Each entry = sanitized original + editor's note (what judgment this discussion changed at the time; where it links into the canon)
-- Sanitization at the whole repository's strictest level: private names / internal toolchains / unreleased product names / agent-collaboration details must all be removed
-- File naming: <YYYY-MM-DD>-<slug>.md (chronological, matching the source discussion dates)
+- Sanitization at the whole repository's strictest level (the forbidden list lives in the root .norm desensitization red line)
 - Related documents not selected (the systematic-review draft = panoramic index; sound field and projection; the double-loop framework, etc.) are in the editor's-note citation pool; not separate entries

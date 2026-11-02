@@ -2,7 +2,7 @@
 type: readme
 language: en
 status: draft
-updated: 2026-11-01
+updated: 2026-11-02
 ---
 
 # cyano-philosophy
@@ -77,6 +77,6 @@ graph BT
 
 ## Status
 
-v0 full first draft (initiated 2026-10-23, content complete 10-27): zh-CN 23 content files all draft, awaiting owner review; **en mirror complete** (2026-10-30: 21 entries + README/CHARTER, evolving in sync with zh). This repository exists in the posture of a working hypothesis: every proposition must be used and tested in real products — a worldview that never intercepts a decision is a poster.
+v0 full first draft (initiated 2026-10-23, content complete 10-27): zh-CN 23 content files all draft, awaiting owner review; **en mirror complete** (2026-10-30: 21 entries + README/CHARTER, evolving in sync with zh).
 
 License: text CC BY-SA 4.0 + code MIT (layered; see LICENSE and tools/LICENSE)

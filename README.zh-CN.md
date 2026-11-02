@@ -2,7 +2,7 @@
 type: readme
 language: zh-CN
 status: draft
-updated: 2026-11-01
+updated: 2026-11-02
 ---
 
 # cyano-philosophy
@@ -75,6 +75,6 @@ graph BT
 
 ## 状态
 
-v0 全量初稿（2026-10-23 立项，10-27 内容齐备）：zh-CN 侧 23 个内容文件全部 draft 待 owner 审查；**en 镜像已全量落地**（2026-10-30：21 件内容 + README/CHARTER，与 zh 同步演进）。本仓库以工作假设的姿态存在：每条命题须在真实产品中被使用与检验——从不参与决策的世界观只是海报。
+v0 全量初稿（2026-10-23 立项，10-27 内容齐备）：zh-CN 侧 23 个内容文件全部 draft 待 owner 审查；**en 镜像已全量落地**（2026-10-30：21 件内容 + README/CHARTER，与 zh 同步演进）。
 
 License: 文本 CC BY-SA 4.0 + 代码 MIT（分层，见 LICENSE 与 tools/LICENSE）

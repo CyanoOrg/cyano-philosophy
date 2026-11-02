@@ -2,7 +2,7 @@
 type: axiom
 language: zh-CN
 status: draft
-updated: 2026-11-01
+updated: 2026-11-02
 ---
 
 # 世界观公理与统一判据
@@ -90,4 +90,4 @@ updated: 2026-11-01
 
 ---
 
-*修订遵循 [CHARTER](../../CHARTER.zh-CN.md)：axioms 层修订需提案 + 反驳期 + 至少一个产品实证。*
+*修订遵循 [CHARTER](../../CHARTER.zh-CN.md)。*

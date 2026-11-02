@@ -2,7 +2,7 @@
 type: axiom
 language: en
 status: draft
-updated: 2026-11-01
+updated: 2026-11-02
 ---
 
 # Worldview Axioms and the Unified Criterion
@@ -90,4 +90,4 @@ Treat the axioms as **working hypotheses**; do not wait for perfection before de
 
 ---
 
-*Revisions follow the [CHARTER](../../CHARTER.en.md): changes at the axioms layer require a proposal + rebuttal period + at least one product proof.*
+*Revisions follow the [CHARTER](../../CHARTER.en.md).*
