@@ -8,7 +8,7 @@ source-date: 2026-09-13
 
 # Culture Is Not a Container, It Is an Entropy Barrier — A Complex-Systems View of Society and Product Systems
 
-> **The Evolution Archive · Part One · Entry 1**. What follows is the original discussion of 2026-09-13 (sanitized: internal links and product codenames removed; the main argument preserved as spoken). **Editor's note at the end.**
+> **The Evolution Archive · Part One · Entry 1**. What follows is the original discussion of 2026-09-13 (sanitized). **Editor's note at the end.**
 
 ---
 
