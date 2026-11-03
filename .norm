@@ -5,7 +5,7 @@ metadata:
   scope: ./
   version: "1.0"
   description: cyano-philosophy 根规范——CyanoOrg 哲学宣言仓库总则
-  last_updated: 2026-11-02
+  last_updated: 2026-11-03
 
 scope:
   covers:
@@ -19,7 +19,7 @@ scope:
 
 
 template:
-  required_files: [README.md, README.zh-CN.md, CHARTER.zh-CN.md, CHARTER.en.md, LICENSE, .nojekyll, index.html, manifest.json, manifest.en.json]
+  required_files: [README.md, README.zh-CN.md, CHARTER.zh-CN.md, CHARTER.en.md, REFERENCES.md, LICENSE, .nojekyll, index.html, manifest.json, manifest.en.json]
   required_directories: [axioms/, criteria/, protocols/, evolution/, wiki/, tools/]
   naming_convention:
     - "criteria: c<N>-<slug>.md（编号即 C-N 锚）"
@@ -41,7 +41,7 @@ agent_rules:
     - "norm validate 保持零警告（profile=root 对齐）"
   engine_division: "校验双轨分工：norm 引擎（norm-spec CLI）管 .norm 自身合规（schema / profile / 强引用存在性）；tools/lint.py 管仓库特有规则（脱敏词表 / manifest 幂等 / Locale-Sync / 编号越界 / frontmatter 与结构）。重叠处（frontmatter 字段）保留双保险"
   frontmatter_required: "每文档必带 type/language/status/updated 四字段（evolution 另加 source-date）。type 枚举：readme | charter | value | axiom | criterion | protocol | evolution-doc | wiki-entry。updated 语义 = 内容版本最后变更时间（非文件落盘时间；Locale-Sync 变更时 zh/en 同步刷新）"
-  language_dirs: "根级文档用文件级后缀（README.md / README.zh-CN.md、CHARTER.zh-CN.md / CHARTER.en.md）；内容目录（axioms/criteria/protocols/evolution/wiki）内分 zh-CN/（源）与 en/（镜像）子目录，同一文档两语言同文件名（同 slug 镜像）；en 目录 README 为镜像导航索引，zh 侧无目录 README——源语言目录即入口"
+  language_dirs: "根级文档用文件级后缀（README.md / README.zh-CN.md、CHARTER.zh-CN.md / CHARTER.en.md）；REFERENCES.md 为单一文件例外（引用本身是原文语言，不做 Locale-Sync 拆分）；内容目录（axioms/criteria/protocols/evolution/wiki）内分 zh-CN/（源）与 en/（镜像）子目录，同一文档两语言同文件名（同 slug 镜像）；en 目录 README 为镜像导航索引，zh 侧无目录 README——源语言目录即入口"
   numbering: "公理 A-x / 判据 C-x / 协议 P-x；编号即锚，修订不重编号，superseded 保留号"
   desensitization_redline: "禁入公开仓：私人人名与个人语境、内部工具链与部署细节、未公开产品名、agent 内部协作细节"
   language_source: "zh-CN 为源语言；en 镜像同 commit 同步；en 译文术语以 glossary 英文对照为准，新术语先入词条再入正文"

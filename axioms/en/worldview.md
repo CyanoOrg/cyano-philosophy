@@ -22,7 +22,7 @@ updated: 2026-11-02
 
 **In one closing line: the process is the value, experience is the intelligence, sovereignty is the dignity, the real is the time** — in the synthetic age, what a person retains of the real is owning their own process, experience, and agents.
 
-Intellectual sources: Sanderson (creator economy), Zeng Ming (smart business), Sutton/LeCun (era of experience), synthesized from the entropy-barrier perspective.
+Intellectual sources: Sanderson (creator economy), Zeng Ming (smart business), Silver & Sutton / LeCun / Hinton (independent lines of the experience era and architecture convergence), synthesized from the entropy-barrier perspective. Full citations in [REFERENCES](../../REFERENCES.md).
 
 ## 2. The Unified Criterion (A1 mechanized)
 

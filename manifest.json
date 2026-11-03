@@ -12,6 +12,10 @@
         {
           "path": "CHARTER.zh-CN.md",
           "t": "修订治理条约"
+        },
+        {
+          "path": "REFERENCES.md",
+          "t": "References"
         }
       ]
     },

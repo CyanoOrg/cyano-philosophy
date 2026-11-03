@@ -23,6 +23,7 @@ NAME_RULES = [
     (re.compile(r"^glossary\.md$"), "wiki"),
     (re.compile(r"^README\.md$"), None),  # 各目录索引，任意目录合法
     (re.compile(r"^(README|CHARTER)\.(zh-CN|en)\.md$"), "ROOT"),  # 根级双语后缀
+    (re.compile(r"^REFERENCES\.md$"), "ROOT"),  # 根级单文件（引用书目·不做 Locale-Sync 拆分）
 ]
 # 脱敏词表外置：tools/.sanitize-words.txt（不入仓，.gitignore 已列）——开源的 lint 不得携带待脱敏名单本身
 SANITIZE_FILE = "tools/.sanitize-words.txt"
@@ -35,7 +36,7 @@ ANCHOR_RE = re.compile(r"〔[a-z0-9]+·[^\〕]+〕")
 def md_files():
     """收集全部受检 md：根级 2 件 + zh-CN/en 内容目录。"""
     out = []
-    for f in ["README.zh-CN.md","CHARTER.zh-CN.md","README.md","CHARTER.en.md"]:
+    for f in ["README.zh-CN.md","CHARTER.zh-CN.md","README.md","CHARTER.en.md","REFERENCES.md"]:
         if os.path.exists(f): out.append(f)
     for d in ["axioms","criteria","protocols","wiki","evolution"]:
         for sub in ["zh-CN","en"]:

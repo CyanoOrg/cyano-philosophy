@@ -12,6 +12,10 @@
         {
           "path": "CHARTER.en.md",
           "t": "Revision governance charter"
+        },
+        {
+          "path": "REFERENCES.md",
+          "t": "References"
         }
       ]
     },
